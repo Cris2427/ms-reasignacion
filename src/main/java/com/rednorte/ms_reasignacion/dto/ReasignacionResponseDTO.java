@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Schema(name = "ReasignacionResponseDTO", description = "Resultado completo del proceso de reasignacion automatica")
 
-public class ReasignacionRespondeDTO {
+public class ReasignacionResponseDTO {
 
     @Schema(description = "ID unico del registro de reasignacion", example = "200")
     private Long id;
