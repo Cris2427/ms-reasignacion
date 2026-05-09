@@ -1,5 +1,6 @@
 package com.rednorte.ms_reasignacion.model;
 
+import com.rednorte.ms_reasignacion.dto.EstadoReasignacion;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,6 +1,7 @@
 package com.rednorte.ms_reasignacion.repository;
 
 
+import com.rednorte.ms_reasignacion.dto.EstadoReasignacion;
 import com.rednorte.ms_reasignacion.model.Reasignacion;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

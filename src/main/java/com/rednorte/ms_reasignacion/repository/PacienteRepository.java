@@ -20,5 +20,5 @@ public interface PacienteRepository extends JpaRepository<Paciente, Long> {
      * @param rut Rut a verificar
      * @return code true si el rut ya esta registrado
      */
-    boolean existsByRut(String rut)
+    boolean existsByRut(String rut);
 }
