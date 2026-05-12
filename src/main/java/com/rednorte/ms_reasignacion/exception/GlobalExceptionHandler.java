@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.time.LocalDateTime;
 import java.util.stream.Collectors;
 
+/**
+ * Manejador global de excepciones para el microservicio de reasignacion
+ * Intercepta las excepciones lanzadas en cualquier controlador y las
+ * convierte en respuestas HTTP estructuradas con el formato
+ */
 @Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHandler {
