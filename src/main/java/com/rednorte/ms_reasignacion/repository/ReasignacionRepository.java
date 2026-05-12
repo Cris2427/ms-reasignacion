@@ -15,7 +15,7 @@ public interface ReasignacionRepository extends JpaRepository<Reasignacion, Long
      * @param estado estado a filtrar
      * @return Lista de reasignaciones con el estado indicado
      */
-    List<Reasignacion> finByEstado(EstadoReasignacion estado);
+    List<Reasignacion> findByEstado(EstadoReasignacion estado);
     /**
      * Obtiene el hisotiral de reasignaciones asociadas a una cita especifica
      * @param citaId ID de la cita medica
@@ -27,7 +27,7 @@ public interface ReasignacionRepository extends JpaRepository<Reasignacion, Long
      * @param nuevoPaciente id del nuevo paciente asignado
      * @return lista de reasignaciones asignadas a ese paciente
      */
-    List<Reasignacion> finByNuevoPacienteId(Long nuevoPaciente);
+    List<Reasignacion> findByNuevoPacienteId(Long nuevoPaciente);
     /**
      * Obtiene el historial de cancelaciones realizadas por un paciente
      * @param pacienteCanceladorId id del paciente que cancelo
