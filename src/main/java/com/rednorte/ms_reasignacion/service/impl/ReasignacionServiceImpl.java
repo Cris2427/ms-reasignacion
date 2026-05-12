@@ -4,6 +4,7 @@ import com.rednorte.ms_reasignacion.client.ListaEsperaClient;
 import com.rednorte.ms_reasignacion.dto.EstadoReasignacion;
 import com.rednorte.ms_reasignacion.dto.ReasignacionRequestDTO;
 import com.rednorte.ms_reasignacion.dto.ReasignacionResponseDTO;
+import com.rednorte.ms_reasignacion.exception.ResourceNotFoundException;
 import com.rednorte.ms_reasignacion.mapper.ReasignacionMapper;
 import com.rednorte.ms_reasignacion.model.Cita;
 import com.rednorte.ms_reasignacion.model.Paciente;
@@ -46,11 +47,11 @@ public class ReasignacionServiceImpl implements ReasignacionService {
         log.info("Iniciando reasignacion para cita ID: {}", request.getCitaId());
 
         Cita cita = citaRepository.findById(request.getCitaId())
-                .orElseThrow(() -> new RuntimeException(
+                .orElseThrow(() -> new ResourceNotFoundException(
                         "Cita no encontrada con ID: " + request.getCitaId()));
 
         Paciente pacienteCancelador = pacienteRepository.findById(request.getPacienteCanceladorId())
-                .orElseThrow(() -> new RuntimeException(
+                .orElseThrow(() -> new ResourceNotFoundException(
                         "Paciente no encontrado con ID: " + request.getPacienteCanceladorId()));
 
         Reasignacion reasignacion = Reasignacion.builder()
@@ -67,7 +68,7 @@ public class ReasignacionServiceImpl implements ReasignacionService {
 
             if (nuevoPacienteId != null) {
                 Paciente nuevoPaciente = pacienteRepository.findById(nuevoPacienteId)
-                        .orElseThrow(() -> new RuntimeException(
+                        .orElseThrow(() -> new ResourceNotFoundException(
                                 "Nuevo paciente no encontrado con ID: " + nuevoPacienteId));
 
                 reasignacion.setNuevoPaciente(nuevoPaciente);
@@ -100,7 +101,7 @@ public class ReasignacionServiceImpl implements ReasignacionService {
     public ReasignacionResponseDTO obtenerPorId(Long id) {
         log.info("Buscando reasignacion con ID: {}", id);
         Reasignacion reasignacion = reasignacionRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException(
+                .orElseThrow(() -> new ResourceNotFoundException(
                         "Reasignacion no encontrada con ID: " + id));
         return mapper.toResponseDTO(reasignacion);
     }
