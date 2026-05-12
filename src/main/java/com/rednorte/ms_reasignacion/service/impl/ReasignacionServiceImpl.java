@@ -120,7 +120,7 @@ public class ReasignacionServiceImpl implements ReasignacionService {
     @Transactional(readOnly = true)
     public List<ReasignacionResponseDTO> listarPorEstado(EstadoReasignacion estado) {
         log.info("Listando reasignaciones con estado: {}", estado);
-        return reasignacionRepository.finByEstado(estado)
+        return reasignacionRepository.findByEstado(estado)
                 .stream()
                 .map(mapper::toResponseDTO)
                 .collect(Collectors.toList());

@@ -17,11 +17,11 @@ import lombok.NoArgsConstructor;
 public class ReasignacionRequestDTO {
 
     @NotNull(message = "El ID de la cita es obligatorio")
-    @Schema(description = "ID de la cita cancelada a reasignar", example = "101", required = true)
+    @Schema(description = "ID de la cita cancelada a reasignar", example = "101", requiredMode = Schema.RequiredMode.REQUIRED)
     private Long citaId;
 
     @NotNull(message = "El ID del paciente que cancelo es obligatorio")
-    @Schema(description = "ID del paciente que cancelo", example = "55", required = true)
+    @Schema(description = "ID del paciente que cancelo", example = "55", requiredMode = Schema.RequiredMode.REQUIRED)
     private Long pacienteCanceladorId;
 
     @Size(max = 500, message = "El motivo no puede superar los 500 caracteres")
