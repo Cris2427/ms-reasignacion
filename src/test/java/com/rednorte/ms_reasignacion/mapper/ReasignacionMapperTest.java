@@ -16,6 +16,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class ReasignacionMapperTest {
     private ReasignacionMapper mapper;
 
