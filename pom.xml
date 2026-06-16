@@ -114,7 +114,6 @@
 					</annotationProcessorPaths>
 				</configuration>
 			</plugin>
-			<!-- JaCoCo: mide la cobertura de las pruebas -->
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
